@@ -1,0 +1,39 @@
+﻿
+@model IEnumerable<GadgetsOnlineShop.Models.ProductDetail>
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+@if (Model.Count() == 0)
+{
+    <p>No Such Item Found</p>
+}
+else
+{
+    foreach (var m in Model)
+    {
+        <div class="col-md-4">
+            <div class="row">
+                <h3 style="color:black;margin-top:50px;margin-left:40px">  @m.ProductName </h3>
+            </div>
+            <p>
+                <a href="@Url.Action("MoreDetail","Home", new { id = "productname" }))">
+                    <img src="~/Image/@m.ProductImage" style="overflow: hidden; position: relative; width:200px; height:300px;" />
+                </a>
+            </p>
+            <p><h4 style="color:brown;font-style:oblique">Price: RS @m.ProductPrice</h4></p>
+            @using (Html.BeginForm("MoreDetail", "Home", FormMethod.Get))
+            {
+                <button class="btn btn-info" value="@m.ProductName" name="productname">
+                    View More>>
+                </button>
+            }
+
+        </div>
+
+
+
+    }
+}

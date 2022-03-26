@@ -1,0 +1,26 @@
+﻿.bodymanual {
+    background-color: #00405d;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.containermanual {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    padding: 30px;
+}
+.Submitsample {
+    outline: none;
+    color: #fff;
+    padding: 0.6em 1em;
+    font-size: 1em;
+    background: #16a085;
+    border: 2px solid #16a085;
+    width: 20%;
+    cursor: pointer;
+    margin: 0;
+}

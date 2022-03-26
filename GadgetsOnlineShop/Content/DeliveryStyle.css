@@ -1,0 +1,187 @@
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+    background: url("../image/login-img.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+/*-- main --*/
+.mainw3-agile {
+    padding: 3em 0 0;
+}
+
+.main-agileinfo {
+    width: 50%;
+    margin: 3em auto 5em;
+}
+
+.w3pay-left {
+    float: left;
+    width: 70%;
+    background-color: #808080;
+    min-height: 451px;
+    text-align: left;
+    position: relative;
+    margin-left: 100px;
+}
+
+.w3pay-left-text {
+    padding: 2em;
+    font-family: 'Times New Roman', sans-serif;
+}
+
+
+
+    .w3pay-left-text h2 {
+        font-size: 2em;
+        color: #fff;
+        font-family: 'Lobster Two', cursive;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    .w3pay-left-text img {
+        width: 33%;
+    }
+
+    .w3pay-left-text p {
+        font-size: 1.4em;
+        color: #fff;
+        /*line-height: 1.8em;
+    margin: 1.5em 0;*/
+        /*background: rgba(0, 0, 0, 0.38);*/
+        padding: .5em;
+    }
+
+    .w3pay-left-text h3 {
+        font-size: 3em;
+        color: #FFEB3B;
+        font-family: 'Lobster Two', cursive;
+    }
+
+.w3pay-left h6 {
+    font-size: 0.8em;
+    background: rgba(0, 0, 0, 0.62);
+    font-weight: 200;
+    letter-spacing: 4px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+    .w3pay-left h6 a {
+        color: #fff;
+        display: block;
+        padding: .8em 0;
+    }
+
+        .w3pay-left h6 a i.fa {
+            margin-right: 1em;
+        }
+/*-- creditCard form --*/
+.card-bounding {
+    padding: 2.5em 2em;
+}
+
+    .card-bounding aside {
+        font-size: 1.4em;
+        padding-bottom: .3em;
+        font-family: 'Times New Roman', cursive;
+        letter-spacing: 1px;
+        color: #222;
+    }
+
+.card-container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 48px;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin: 0 auto 1.5em;
+}
+
+    .card-container input {
+        width: 100%;
+        letter-spacing: 1px;
+        font-size: 1em;
+        padding: 0.8em 1em;
+        border: 0;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+.card-type {
+    width: 40px;
+    height: 28px;
+    background: url(../images/cards.png);
+    background-position: 0 -145px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 8px;
+    left: 12px;
+}
+
+.card-details {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1.5em;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    transition: 300ms ease;
+}
+
+    .card-details input {
+        width: 100%;
+        letter-spacing: 1px;
+        font-size: 1em;
+        padding: 0.6em 1em;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+        .card-details input.error {
+            border: 1px solid #c2313c;
+            box-shadow: 0 4px 8px 0 rgba(238,76,87,0.3);
+            outline: none;
+        }
+
+    .card-details .expiration {
+        width: 50%;
+        float: left;
+        padding-right: 5%;
+    }
+
+    .card-details .cvv {
+        width: 45%;
+        float: left;
+    }
+
+.w3pay-right input[type="submit"] {
+    outline: none;
+    color: #fff;
+    padding: 0.6em 1em;
+    font-size: 1em;
+    -webkit-appearance: none;
+    background: #16a085;
+    border: 2px solid #16a085;
+    width: 100%;
+    cursor: pointer;
+    margin: 0;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    transition: .5s all;
+}
+
+.w3pay-left-sample{
+    outline: none;
+    color: #fff;
+    padding: 0.6em 1em;
+    font-size: 1em;
+    -webkit-appearance: none;
+    background: #16a085;
+    border: 2px solid #16a085;
+    width: 100%;
+    cursor: pointer;
+    margin: 0;
+}

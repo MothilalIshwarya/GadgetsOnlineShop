@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<fieldset>
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-md-8 col-md-offset-3">-->
+            <div id="imageCarousel" class="carousel slide" data-interval="2000"
+                 data-ride="carousel" data-pause="hover" data-wrap="true">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#imageCarousel" data-slide-to="1"></li>
+                    <li data-target="#imageCarousel" data-slide-to="2"></li>
+                    <li data-target="#imageCarousel" data-slide-to="3"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="~/Image/phone.jpg" class="img-responsive">
+                        <div class="carousel-caption" style="position: absolute; text-align: left; font-size: 14px; width: 287px; color:white">
+                            <h3></h3>
+                            <p style="font-style:italic; color:white;font-size:small;text-align:start;font-size:200%">“The majority of internet usage will be done via a mobile device and for most people the mobile web will be their primary, if not their only, way of experiencing the internet.”</p>
+                        </div>
+
+                    </div>
+
+                    <div class="item">
+                        <img src="~/Image/phone1.jpg" class="img-responsive">
+                        <div class="carousel-caption" style="position: absolute; text-align: left; font-size: 14px; width: 287px; color:white;font-style:oblique">
+                            <h3></h3>
+                            <p style="font-style:italic; color:white;font-size:small;text-align:start;font-size:200%">The trend has been that mobile was winning. It’s now wonThe trend has been that mobile was winning. It’s now wonThe trend has been that mobile was winning. It’s now won</p>
+                        </div>
+
+                    </div>
+                    <div class="item">
+                        <img src="~/Image/phone.jpg" class="img-responsive">
+                        <div class="carousel-caption" style="position: absolute; text-align: left; font-size: 14px; width: 287px;font-style:oblique">
+                            <h3></h3>
+                            <p style="color:white;font-size:small;text-align:start;font-size:200%">The trend has been that mobile was winning. It’s now wonThe trend has been that mobile was winning. It’s now wonThe trend has been that mobile was winning. It’s now won</p>
+                        </div>
+
+                    </div>
+                    <div class="item">
+                        <img src="~/Image/phone1.jpg" class="img-responsive">
+                        <div class="carousel-caption" style="position: absolute; text-align: left; font-size: 14px; width: 287px; color:white;font-style:oblique">
+                            <h3></h3>
+                            <p style="font-style:italic; color:white;font-size:small;text-align:start;font-size:200%">The trend has been that mobile was winning. It’s now wonThe trend has been that mobile was winning. It’s now wonThe trend has been that mobile was winning. It’s now won</p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <a href="#imageCarousel" class="left carousel-control" data-slide="prev">
+                    <span class="icon-prev"></span>
+                </a>
+                <a href="#imageCarousel" class="carousel-control right" data-slide="next">
+                    <span class="icon-next"></span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!--</div>-->
+</fieldset>
+@using (Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+<div style="width:250px;margin-top:10px">
+    @Html.TextBox("search")
+    <input type="submit" value="search" />
+</div>
+}
+<div class="row">
+    <div class="container" style="border-block-color:black">
+        @foreach (var m in Model)
+        {
+
+            <div class="col-md-4">
+                <div class="row">
+                    <h3 style="color:black;margin-top:50px;margin-left:40px">  @m.ProductName </h3>
+                </div>
+                <p>
+                    <a href="@Url.Action("MoreDetail","Home", new { id = "productname" }))">
+                        <img src="~/Image/@m.ProductImage" style="overflow: hidden; position: relative; width:200px; height:300px;" />
+                    </a>
+                </p>
+                <p><h4 style="color:brown;font-style:oblique">Price: RS @m.ProductPrice</h4></p>
+                @using (Html.BeginForm("MoreDetail", "Home", FormMethod.Get))
+                {
+                    <button class="btn btn-info" value="@m.ProductName" name="productname">
+                        View More>>
+                    </button>
+                }
+
+            </div>
+        }
+    </div>
+</div>

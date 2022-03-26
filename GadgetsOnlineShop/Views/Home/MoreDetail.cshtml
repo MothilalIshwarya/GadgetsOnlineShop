@@ -1,0 +1,77 @@
+﻿@model IEnumerable<GadgetsOnlineShop.Models.ProductDetail>
+
+@{
+    ViewBag.Title = "MoreDetail";
+}
+
+
+<!--<div class="container">-->
+<div ng - controller="MainCtrl">
+    @if (Model.Count() == 0)
+    {
+        <p>No Such Item Found</p>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+<div class="panel panel-default" style="margin-top:20px">
+    <!--<div class="panel-heading">
+        <h4 style="text-align:center"> @item.ProductName</h4>
+    </div>-->
+    <div class="panel-body">
+        <div class="col-sm-3 col-md-6" style="color:blue">
+            <!--<img src="~/Image/@item.ProductImage" width="400" height="400" />-->
+            <div class="container" style="width: 250px; height:400px">
+                <div class="row">
+                    <div id="imageCarousel" class="carousel slide" data-interval="2000" data-ride="carousel" data-pause="hover" data-wrap="true">
+
+                        <ol class="carousel-indicators">
+                            <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#imageCarousel" data-slide-to="1"></li>
+                            <li data-target="#imageCarousel" data-slide-to="2"></li>
+                            <li data-target="#imageCarousel" data-slide-to="3"></li>
+                        </ol>
+
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="~/Image/@item.ProductImage" class="img-responsive" style="margin-left: 30px; height: 400px;width:200px">
+                            </div>
+                            <div class="item">
+                                <img src="~/Image/@item.ProductImage2" class="img-responsive" style="margin-left: 30px; height: 400px; width: 200px ">
+                            </div>
+                            <div class="item">
+                                <img src="~/Image/@item.ProductImage" class="img-responsive" style="margin-left: 30px; height: 400px; width: 200px ">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 col-md-6">
+           
+            <h3> <span  style="color:gray"> @item.ProductName </span></h3>
+            <h3> <span  style="color:black"> <b> Features: </b></span> </h3>
+            <h4> <span  style="color: darkslategrey; text-align: left; font-family: 'Times New Roman', cursive;"> @item.ProductFeatures </span></h4>
+            <h3> <span  style="color:black"> <b> Color: </b></span> </h3>
+            <h4> <span  style="color:gray"> @item.ProductColour </span></h4>
+            <h3> <span  style="color:black"> <b> Price: </b></span> </h3>
+            <h6> <span  style="color:gray"> @item.ProductPrice </span></h6>
+        </div>
+    </div>
+    <div style="margin-left:500px">
+        <a href="@Url.Action("Index")" class="btn btn-warning"><span class="glyphicon glyphicon-eye-open"> </span> Continue shopping</a>
+        <a href="@Url.Action("CartData", "Cart", item)" class="btn btn-warning"><span class="glyphicon glyphicon-shopping-cart"> </span> Add To Cart</a>
+
+    </div>
+
+</div>
+
+        }
+    }
+</div>
+<!--</div>-->
+

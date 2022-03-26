@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("GadgetOnlineShop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="btn-group nav">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Category<i class="caret"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="@Url.Action("Category","Home",new {categoryName="Phone" })">Smart Phone</a></li>
+                            <li><a href="@Url.Action("Category","Home",new {categoryName="Laptop" })">Laptop</a></li>
+                            <li><a href="@Url.Action("Category","Home",new {categoryName="SmartWatch" })">Smart Watch</a></li>
+                            <li><a href="@Url.Action("Category","Home",new {categoryName="Camera" })">Camera</a></li>
+                            <li><a href="@Url.Action("Category","Home",new {categoryName="Tablet" })">Tablet</a></li>
+                            <li><a href="@Url.Action("Category","Home",new {categoryName="HeadPhone" })">HeadPhone</a></li>
+
+
+                        </ul>
+                    </li>
+
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("CartList", "CartList", "Cart")</li>                    
+
+
+                    }
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                    <li class="btn-group nav">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Manage<i class="caret"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="@Url.Action("Index","ProductDetails")">Mange Product Detail</a></li>
+                            <li><a href="@Url.Action("Create","ProductDetails")">Add Product</a></li>
+                            <li><a href="@Url.Action("Index","UserDetails")">List Of User</a></li>
+                            
+                        </ul>
+                    </li>
+                        }
+                        <li style="color:white;margin-top:15px">@User.Identity.Name</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Signin", "Home")</li>
+                        <li>@Html.ActionLink("Signup", "Signup", "Home")</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        
+       
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

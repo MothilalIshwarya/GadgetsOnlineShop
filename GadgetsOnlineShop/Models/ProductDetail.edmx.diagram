@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5b854ead27864ac5b83947d2ea7138b6" Name="Diagram1">
+        <EntityTypeShape EntityType="GadgetDetailModel.CartDetail" Width="1.5" PointX="6.375" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GadgetDetailModel.ProductDetail" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GadgetDetailModel.UserDetail" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="GadgetDetailModel.FK_CartDetail_UserDetail" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="GadgetDetailModel.Role" Width="1.5" PointX="1" PointY="1.75" />
+        <AssociationConnector Association="GadgetDetailModel.FK_Role_UserDetail" />
+        <EntityTypeShape EntityType="GadgetDetailModel.Payment" Width="1.5" PointX="6" PointY="4.25" />
+        <AssociationConnector Association="GadgetDetailModel.FK_Payment_UserDetail" />
+        <EntityTypeShape EntityType="GadgetDetailModel.DeliveryDetail" Width="1.5" PointX="6" PointY="8.375" />
+        <AssociationConnector Association="GadgetDetailModel.FK_DeliveryDetail_UserDetail" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

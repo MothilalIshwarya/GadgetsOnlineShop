@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "CartList";
+}
+
+<h2>CartList</h2>
+<div class="row">
+    <div class="container" style="border-color:red">
+        @foreach (var m in Model)
+        {
+
+        <div class="col-md-4">
+            <div class="row">
+                <h4 style="color:darkred;margin-top:10px">  @m.CartProductName </h4>
+            </div>
+            <p>
+                <a href="@Url.Action("MoreDetail", "Home", new { id = "productname" }))">
+                    <img src="~/Image/@m.CartImage" style="overflow: hidden; position: relative; width:200px; height:300px;" />
+                </a>
+            </p>
+            <p><h4 style="color:brown;font-style:oblique">Price: RS @m.CartPrice</h4></p>
+            <button class="btn btn-warning" data - slno="@m.CartNo" onclick="location.href='@Url.Action("RemoveList", "Cart", m)'"> delete </button>   
+            <button type="button" class="btn btn-warning"data - slno="@m.CartNo" onclick="location.href='@Url.Action("Create", "Payment", m)'"> Buy </button>
+
+
+        </div>
+        }
+        </div>
+    </div>
+   

@@ -1,0 +1,66 @@
+﻿body {
+    background: url("../image/login-img.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    /*-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;*/
+    font-family: 'Raleway', sans-serif;
+}
+
+.form-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 10px 10px;
+    width: 28%;
+    margin-top: 30px;
+}
+
+.form-info {
+    margin-bottom: 19px;
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+.email-w3l {
+    padding: 10px 7px;
+    position: relative;
+}
+
+.pass-w3l {
+    padding: 10px;
+    position: relative;
+}
+
+    .email-w3l .email, .pass-w3l .pass {
+        width: 87%;
+        padding: 19px 26px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #e0e7e7;
+        background: none;
+        color: #E0E7E7;
+    }
+
+.submit-agileits {
+    padding: 28px 10px;
+}
+
+    .submit-agileits .login:hover {
+        background-color: #2b292a;
+        color: #e1e6e7;
+    }

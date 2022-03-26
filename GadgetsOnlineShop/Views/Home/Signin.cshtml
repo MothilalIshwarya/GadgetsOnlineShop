@@ -1,0 +1,38 @@
+﻿@model GadgetsOnlineShop.Models.UserDetail
+<link href="~/Content/LoginAndRegister.css" rel="stylesheet" />
+<body>
+
+    <div class="form">
+        <div class="form-content">
+
+
+            @using (Html.BeginForm("Signin", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-info">
+                    <h2>Login</h2>
+                </div>
+                <div class="email-w3l">
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "email", @placeholder = "UserName" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+
+                </div>
+                <div class="pass-w3l">
+                    <span class="i2"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+                    @Html.EditorFor(model => model.UserPassword, new { htmlAttributes = new { @class = "pass", @placeholder = "Password", @type = "Password" } })
+                    @Html.ValidationMessageFor(model => model.UserPassword, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="submit-agileits">
+                    <input type="submit" value="Submit" class="btn btn-default" />
+                </div>
+            }
+
+
+        </div>
+    </div>
+
+</body>
+

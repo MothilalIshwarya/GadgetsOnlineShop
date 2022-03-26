@@ -1,0 +1,81 @@
+﻿@model IEnumerable<GadgetsOnlineShop.Models.ProductDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/CreatePageStyle.css" rel="stylesheet" />
+<h2>Index</h2>
+
+<p >
+    <a class="productcreate" href="@Url.Action("Create", "ProductDetails")">Create New</a>
+
+</p>
+<table class="table">
+    <tr class="trhead">
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductFeatures)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductImage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductColour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductImage2)
+        </th>
+        <th>Edit</th>
+        <th>Details</th>
+        <th>Delete</th>
+
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductFeatures)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductImage)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductPrice)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductColour)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CategoryName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ProductImage2)
+    </td>
+    <td>
+        <br />
+        @Html.ActionLink("Edit", "Edit", new { id = item.ProductId },new { @class = "edit" })
+
+    </td>
+    <td>
+        <br />
+        @Html.ActionLink("Details", "Details", new { id = item.ProductId }, new { @class = "edit" })
+    </td>
+    <td>
+        <br />
+        @Html.ActionLink("Delete", "Delete", new { id = item.ProductId }, new { @class = "edit" })
+    </td>
+</tr>
+}
+
+</table>
